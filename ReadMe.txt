@@ -7,10 +7,10 @@
 OrderAPI              -------->     OrderOutboxTablePublisherService           -------->     StockAPI
 --------                            --------------------------------                         --------------
 orderOutboxes table                   OrderOutboxPublishJob                                  orderInboxes table insertion
-	Payload = orderCreatedEvent         checkes OrderOutboxes table(5 secs)                  	Payload = orderCreatedEvent
-	ProcessedDate = null                     for ProcessedDate = null                           Processed = false
+	Payload = orderCreatedEvent         checkes OrderOutboxes table(5 secs)                  Payload = orderCreatedEvent
+	ProcessedDate = null                     for ProcessedDate = null                        Processed = false
                                         orderCreatedEvent = Payload                          scan orderInboxes table for Processed = false
-										OrderOutboxes.ProcessedDate=getdate()                make the necessary process on OrderCreatedEvent(Payload)
+					OrderOutboxes.ProcessedDate=getdate()                make the necessary process on OrderCreatedEvent(Payload)
                                         publish orderCreatedEvent                            Processed = true
 										
 ****************************************************************
