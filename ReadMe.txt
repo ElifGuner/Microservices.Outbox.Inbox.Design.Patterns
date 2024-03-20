@@ -1,7 +1,7 @@
 ****************************************************************
 		 Outbox-Inbox Design Pattern Example
-					Elif Güner
-					28.02.2024
+			Elif Güner
+			28.02.2024
 ****************************************************************
 
 OrderAPI              -------->     OrderOutboxTablePublisherService           -------->     StockAPI
